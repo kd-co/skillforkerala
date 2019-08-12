@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:900");
 body {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif !important; }
 
@@ -59,9 +60,32 @@ a, a:hover {
     height: 30px;
     background: #b9f4e7;
     z-index: -1; }
+  @media (max-width: 800px) {
+    .brand-header {
+      font-size: 4.4rem;
+      text-align: center;
+      display: inline-block;
+      line-height: 0.75; }
+      .brand-header:before {
+        height: 23px; } }
+
+.header-container {
+  margin-top: 40px; }
+  @media (max-width: 800px) {
+    .header-container {
+      text-align: center !important;
+      margin-top: 25px; } }
 
 .brand-header-md {
   font-size: 4rem; }
+  @media (max-width: 800px) {
+    .brand-header-md {
+      font-size: 3rem;
+      text-align: center; } }
+
+@media (max-width: 800px) {
+  .mob-center {
+    text-align: center; } }
 
 .serif-extra-bold {
   font-family: "Playfair Display", serif;
@@ -85,9 +109,17 @@ a, a:hover {
   font-size: 2.2rem;
   color: #666;
   font-weight: 300; }
+  @media (max-width: 800px) {
+    .section-desc-lg {
+      font-size: 1.8rem;
+      text-align: center; } }
 
 .section-desc-md {
   font-size: 1.8rem; }
+  @media (max-width: 800px) {
+    .section-desc-md {
+      font-size: 1.4rem;
+      text-align: center; } }
 
 .section-header-sm {
   font-size: 1.6rem; }
@@ -109,7 +141,7 @@ a, a:hover {
   width: 60%; }
 
 .btn {
-  padding: 15px !important;
+  padding: 15px;
   display: block;
   width: 100%;
   border-radius: 0px !important;
@@ -127,17 +159,24 @@ a, a:hover {
   border-color: #50e3c2 !important;
   color: #333 !important; }
 
-.btn-sm {
-  color: #fff;
-  text-transform: none;
-  font-weight: 400 !important; }
-  .btn-sm:hover {
-    color: #fff !important; }
+@media (max-width: 800px) {
+  .btn-primary.portfolio {
+    color: #fff;
+    font-weight: 700 !important;
+    padding: 7px 20px !important;
+    display: inline-block;
+    width: auto;
+    font-size: 1.4rem !important; } }
 
 @media (min-width: 800px) {
   .landing-hero {
     max-width: 480px;
     margin-top: 10px; } }
+@media (max-width: 800px) {
+  .landing-hero {
+    max-width: 80%;
+    margin: 10px auto 10px auto;
+    display: block; } }
 
 .brand-card {
   background: #fff;
@@ -147,7 +186,12 @@ a, a:hover {
 
 .landing-listing-container {
   background: #f0f5f4;
-  padding: 50px 0px; }
+  padding: 50px 0px;
+  margin-top: 70px; }
+  @media (max-width: 800px) {
+    .landing-listing-container {
+      padding: 20px 0px;
+      margin-top: 40px; } }
 
 .landing-search {
   height: 56px !important;
@@ -174,17 +218,28 @@ a, a:hover {
   content: '\2022';
   margin: 0 5px;
   position: relative; }
+  @media (max-width: 800px) {
+    .dot-seperator::after {
+      display: none; } }
 
 .profile-card {
   padding: 30px 20px 0px 140px;
   position: relative;
   min-height: 140px; }
+  @media (max-width: 800px) {
+    .profile-card {
+      padding: 20px 15px 15px 100px; } }
   .profile-card .profile-card-dp {
     position: absolute;
     left: 20px;
     top: 20px;
     height: 100px;
     width: 100px; }
+    @media (max-width: 800px) {
+      .profile-card .profile-card-dp {
+        height: 60px;
+        width: 60px;
+        top: 15px; } }
   .profile-card div.profile-card-dp {
     border-radius: 1000px;
     text-align: center;
@@ -195,14 +250,26 @@ a, a:hover {
     justify-content: center;
     align-content: center;
     flex-direction: column; }
+    @media (max-width: 800px) {
+      .profile-card div.profile-card-dp {
+        font-size: 2rem; } }
   .profile-card .profile-card-header {
     font-size: 2.3rem; }
+    @media (max-width: 800px) {
+      .profile-card .profile-card-header {
+        font-size: 1.9rem; } }
   .profile-card .profile-card-desc {
     font-size: 1.8rem; }
+    @media (max-width: 800px) {
+      .profile-card .profile-card-desc {
+        font-size: 1.6rem; } }
   .profile-card .profile-card-loc {
     font-size: 1.3rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase; }
+    @media (max-width: 800px) {
+      .profile-card .profile-card-loc {
+        font-size: 1.2rem; } }
   .profile-card .profile-card-cta-container {
     border-top: 1px solid #e0e0e0;
     margin-left: -20px;
@@ -299,12 +366,29 @@ input[type="text"].form-control {
   height: 60px;
   width: 60px; }
 
+.footer {
+  padding: 20px 15px;
+  text-align: center; }
+
 .navbar-default {
   background: #fff;
-  border: none; }
+  border: none;
+  margin-bottom: 30px; }
+  @media (max-width: 800px) {
+    .navbar-default {
+      margin-bottom: 15px; } }
   .navbar-default .navbar-brand {
     height: 70px;
     padding: 25px 15px; }
+    @media (max-width: 800px) {
+      .navbar-default .navbar-brand {
+        text-align: center;
+        height: auto;
+        width: 100%;
+        padding: 20px 15px; } }
+  @media (max-width: 800px) {
+    .navbar-default .navbar-header {
+      text-align: center; } }
   .navbar-default .navbar-nav > li > a {
     padding-top: 25px;
     padding-bottom: 25px;
