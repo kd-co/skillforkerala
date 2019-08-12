@@ -225,10 +225,12 @@ a, a:hover {
 .profile-card {
   padding: 30px 20px 0px 140px;
   position: relative;
-  min-height: 140px; }
+  min-height: 140px;
+  margin-bottom: 25px; }
   @media (max-width: 800px) {
     .profile-card {
-      padding: 20px 15px 15px 100px; } }
+      padding: 20px 15px 15px 100px;
+      margin-bottom: 15px; } }
   .profile-card .profile-card-dp {
     position: absolute;
     left: 20px;
