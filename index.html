@@ -3,12 +3,13 @@
 <head>
 	<title>Pledge for Kerala | Donate your time and skill to help Kerala flood victims</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-static-top">
+	<nav class="navbar navbar-default navbar-static-top animated fadeIn">
 	  <div class="container">
 	    <div class="navbar-header">
 	      <a class="navbar-brand">Skill for Kerala</a>
@@ -23,7 +24,7 @@
 	</nav>
 
 	<div class="container">
-		<div class="row">
+		<div class="row animated fadeIn">
 			<div class="col-md-6">
 				<img src="img/landing-hero.png" class="landing-hero">
 			</div>
@@ -118,7 +119,7 @@
 	  		],
 
   		item: `<div class='col-md-12'>
-				<div class='brand-card profile-card mb25'>
+				<div class='brand-card profile-card mb25 animated fadeIn'>
 					<!-- <img src='img/dp.jpg' class='profile-card-dp circular mb15'> -->
 					<div class='profile-card-dp bgColor'>
 						<span class='initials'></span>
@@ -156,12 +157,12 @@
 
 			$.each(data, function( key, value ) {
 				console.log(value, 90990);
-				var name = value['yourName']?value['yourName']:'Unknown';
+				var name = value['yourFullName']?value['yourFullName']:'Unknown';
 				var email = value['emailAddress'];
-				var hourlyRate = value['hourlyRate(Range-PleaseSpecifyCurrency)'];
-				var hours = value['howManyHoursAreYouWillingToWork?'];
+				var hourlyRate = value['hourlyRate'];
+				var hours = value['howManyHoursCanYouPledge?'];
 				var portfolio = value['linkToYourPortfolioOrPersonalWebsite'];
-				var services = value['whatAreYouGoodAt?(Design,WebDevelopmentEtc)'];
+				var services = value['whatServicesDoYouOffer?'];
 				var obj = {
 					name: name,
 					email: email,
