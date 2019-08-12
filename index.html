@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-static-top mb30">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Skill for Kerala</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav pull-right">
+	        <li><a>About</a></li>
+	        <li><a>Contact</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<img src="img/landing-hero.png" class="landing-hero">
+			</div>
+			<div class="col-md-6">
+				<div class="mt40">
+					<h1 class="brand-header">Kerala needs</h1>
+					<h1 class="brand-header">Your Time</h1>
+				</div>
+				<div class="mt30">
+					<p class="section-desc-lg">Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				</div>
+				<div class="row mt30">
+					<div class="col-md-5">
+						<a class="btn btn-primary">
+							Pledge your time
+						</a>
+					</div>
+				</div>
+				<div class="row mt30">
+					<div class="col-md-12">
+					<p class="section-desc-md c-grey-semi-dark" id="total-count-line" style="display: none;">
+						<span class="mr7">😇</span>
+						<span id="total-count-number"></span>
+						people have already pledged theirs!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="landing-listing-container mt70">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="brand-header brand-header-md serif-bold">The List</h1>
+				</div>
+			</div>
+
+			<!-- <div class="mt30 mb20">
+				<div class="row">
+					<div class="col-md-10">
+						<input type="text" class="form-control landing-search" placeholder="Search by name, skills or location..." name="">
+					</div>
+					<div class="col-md-2 align-right">
+						<a class="section-desc-md relative t15 normal-link">Filter by skill</a>
+					</div>
+				</div>
+			</div> -->
+
+			<div class="profile-card-section mt40 mb60" id="designers">
+			   <ul class="list row" style="display: block; padding: 0px;"></ul>
+			</div>
+
+
+		</div>
+	</section>
+
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+	<script src="js/list.min.js"></script>
+
+	<script type="text/javascript">
+		
+		var designersList;
+
+		var options = {
+		  valueNames: [ 
+		  	'name', 
+		  	{ name: 'image',
+		  	  attr: 'src',
+		  	}, 
+		  	'hourlyRate', 
+		  	'hours', 
+		  	'services', 
+		  	'initials',
+		  	{
+		  	  name: 'bgColor',
+		  	  attr: 'style',
+		  	},
+		  	{
+		  	  name: 'portfolio',
+		  	  attr: 'href',
+		  	}
+	  		],
+
+  		item: `<div class='col-md-12'>
+				<div class='brand-card profile-card mb25'>
+					<!-- <img src='img/dp.jpg' class='profile-card-dp circular mb15'> -->
+					<div class='profile-card-dp bgColor'>
+						<span class='initials'></span>
+					</div>
+					<div class='row'>
+						<div class='col-md-9'>
+							<h5 class='profile-card-header c-grey-dark mb7 mt0 name'></h5>
+							<p class='profile-card-desc c-grey-semi-dark mb7 services'></p>
+							<p class='profile-card-loc c-grey-semi-dark'>
+								<span class='hours'></span>
+								<span class='dot-seperator'></span>
+								<span class='hourlyRate'></span>
+							</p>
+							<p class='profile-card-loc c-grey-semi-dark initials'></p>
+						</div>
+						<div class='col-md-3'>
+							<a class='col-xs-6 btn btn-primary portfolio'>Portfolio</a>
+						</div>
+					</div>
+				</div>
+			</div>`
+		};
+
+
+		var values = [];
+
+		var colours = ['#FFD37A', '#E57E22', '#98A2A4', '#F6B7D1', '#63A4BB', '#D8E3E4', '#BD97A3', '#8CC7C2', '#E8D387', '#B7BAA4', '#97CE68'];
+
+		$("#profile-card-loader").show();
+		$.getJSON("https://api.sheety.co/9a0d2e41-b1b6-48b5-9a1c-f0a1678b6aa5", function(data) {
+
+			console.log(data, 90990);
+			$("#total-count-number").text(data.length);
+			$("#total-count-line").fadeIn("fast");
+
+			$.each(data, function( key, value ) {
+				console.log(value, 90990);
+				var name = value['yourName']?value['yourName']:'Unknown';
+				var email = value['emailAddress'];
+				var hourlyRate = value['hourlyRate(Range-PleaseSpecifyCurrency)'];
+				var hours = value['howManyHoursAreYouWillingToWork?'];
+				var portfolio = value['linkToYourPortfolioOrPersonalWebsite'];
+				var services = value['whatAreYouGoodAt?(Design,WebDevelopmentEtc)'];
+				var obj = {
+					name: name,
+					email: email,
+					hourlyRate: hourlyRate + ' per hour',
+					hours: 'Pledged ' + hours + ' hours',
+					portfolio: portfolio,
+					services: services,
+					initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join(""),
+					bgColor: 'background: ' + colours[Math.floor(Math.random()*colours.length)],
+				}
+				values.push(obj);
+				console.log(obj);
+			});
+			designersList = new List('designers', options, values);	
+			console.log(designersList);
+			$("#profile-card-loader").hide();
+		});
+
+  	</script>
+
+</body>
+</html>
