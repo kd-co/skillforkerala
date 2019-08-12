@@ -166,7 +166,7 @@
 					hours: 'Pledged ' + hours + ' hours',
 					portfolio: portfolio,
 					services: services,
-					initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join(""),
+					initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join("").toUpperCase(),
 					bgColor: 'background: ' + colours[Math.floor(Math.random()*colours.length)],
 				}
 				values.push(obj);
