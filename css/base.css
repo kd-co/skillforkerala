@@ -159,6 +159,11 @@ a, a:hover {
   border-color: #50e3c2 !important;
   color: #333 !important; }
 
+.btn-secondary {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #333 !important; }
+
 @media (max-width: 800px) {
   .btn-primary.portfolio {
     color: #fff;

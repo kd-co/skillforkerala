@@ -115,6 +115,10 @@
 		  	'services', 
 		  	'initials',
 		  	{
+		  	  name: 'email',
+		  	  attr: 'href',
+		  	},
+		  	{
 		  	  name: 'bgColor',
 		  	  attr: 'style',
 		  	},
@@ -131,7 +135,7 @@
 						<span class='initials'></span>
 					</div>
 					<div class='row'>
-						<div class='col-md-9'>
+						<div class='col-md-7'>
 							<h5 class='profile-card-header c-grey-dark mb7 mt0 name'></h5>
 							<p class='profile-card-desc c-grey-semi-dark mb7 services'></p>
 							<p class='profile-card-loc c-grey-semi-dark'>
@@ -141,8 +145,11 @@
 							</p>
 							<p class='profile-card-loc c-grey-semi-dark initials'></p>
 						</div>
+						<div class='col-md-2'>
+							<a class='col-xs-6 btn btn-secondary portfolio btn-sm mt10 mb5'>Portfolio</a>
+						</div>
 						<div class='col-md-3'>
-							<a class='col-xs-6 btn btn-primary portfolio btn-sm mt10 mb5'>Portfolio</a>
+							<a class='col-xs-6 btn btn-primary email btn-sm mt10 mb5'>Contact</a>
 						</div>
 					</div>
 				</div>
@@ -172,7 +179,7 @@
 				if(value['approved']=='Yes' && value['timestamp']) {
 					var obj = {
 						name: name,
-						email: email,
+						email: 'mailto:' + email + '?subject=Skill for Kerala',
 						hourlyRate: hourlyRate + '/hour',
 						hours: 'Pledged ' + hours + ' hours',
 						portfolio: portfolio,

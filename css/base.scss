@@ -174,6 +174,11 @@ a, a:hover{
 	border-color: $BRAND-PRIMARY !important;
 	color: $GREY-DARK !important;
 }
+.btn-secondary{
+	background: #fff !important;
+	border-color: #fff !important;
+	color: $GREY-DARK !important;
+}
 .btn-primary.portfolio{
 	@media(max-width: 800px) {
 		color: #fff;
