@@ -53,7 +53,7 @@ a, a:hover{
 	font-family: $FONT-SERIF;
 	color: $GREY-DARK;
 	font-weight: 700;
-	font-size: 6.2rem;
+    font-size: 4.5rem;
 	position: relative;
 	z-index: 10;
 	display: table;
@@ -70,12 +70,12 @@ a, a:hover{
 		z-index: -1;
 	}
 	@media(max-width: 800px) {
-		font-size: 4.4rem;
+		font-size: 3rem;
 		text-align: center;
 		display: inline-block;
-		line-height: 0.75;
+		line-height: 0.65;
 		&:before{
-			height: 23px;
+			height: 20px;
 		}
 	}
 }
@@ -89,13 +89,18 @@ a, a:hover{
 .brand-header-md{
 	font-size: 4rem;
 	@media(max-width: 800px) {
-		font-size: 3rem;	
+		font-size: 2.7rem;	
 		text-align: center;
 	}
 }
 .mob-center{
 	@media(max-width: 800px) {
 		text-align: center;
+	}	
+}
+.web-only{
+	@media(max-width: 800px) {
+		display: none;
 	}	
 }
 .serif-extra-bold{
@@ -179,7 +184,7 @@ a, a:hover{
 	border-color: #fff !important;
 	color: $GREY-DARK !important;
 }
-.btn-primary.portfolio{
+.btn-primary.email{
 	@media(max-width: 800px) {
 		color: #fff;
 		font-weight: 700 !important;
@@ -246,8 +251,8 @@ a, a:hover{
   }
 }
 .profile-card{
-	padding: 30px 20px 0px 140px;
-	position: relative;
+    padding: 30px 20px 20px 140px;
+    position: relative;
 	min-height: 140px;
 	margin-bottom: 25px;
 	@media(max-width: 800px){
@@ -411,6 +416,16 @@ input[type="text"].form-control{
 }
 #total-count-number, #total-hour-count{
 	font-weight: 700;
+}
+.hours, .hourlyRate{
+	@media(max-width: 800px){
+		display: block;
+	}
+}
+.hourlyRate{
+	@media(max-width: 800px){
+		margin-top: 7px;
+	}
 }
 .navbar-default{
 	background: #fff;

@@ -47,7 +47,7 @@ a, a:hover {
   font-family: "Playfair Display", serif;
   color: #333;
   font-weight: 700;
-  font-size: 6.2rem;
+  font-size: 4.5rem;
   position: relative;
   z-index: 10;
   display: table; }
@@ -62,12 +62,12 @@ a, a:hover {
     z-index: -1; }
   @media (max-width: 800px) {
     .brand-header {
-      font-size: 4.4rem;
+      font-size: 3rem;
       text-align: center;
       display: inline-block;
-      line-height: 0.75; }
+      line-height: 0.65; }
       .brand-header:before {
-        height: 23px; } }
+        height: 20px; } }
 
 .header-container {
   margin-top: 40px; }
@@ -80,12 +80,16 @@ a, a:hover {
   font-size: 4rem; }
   @media (max-width: 800px) {
     .brand-header-md {
-      font-size: 3rem;
+      font-size: 2.7rem;
       text-align: center; } }
 
 @media (max-width: 800px) {
   .mob-center {
     text-align: center; } }
+
+@media (max-width: 800px) {
+  .web-only {
+    display: none; } }
 
 .serif-extra-bold {
   font-family: "Playfair Display", serif;
@@ -165,7 +169,7 @@ a, a:hover {
   color: #333 !important; }
 
 @media (max-width: 800px) {
-  .btn-primary.portfolio {
+  .btn-primary.email {
     color: #fff;
     font-weight: 700 !important;
     padding: 7px 20px !important;
@@ -228,7 +232,7 @@ a, a:hover {
       display: none; } }
 
 .profile-card {
-  padding: 30px 20px 0px 140px;
+  padding: 30px 20px 20px 140px;
   position: relative;
   min-height: 140px;
   margin-bottom: 25px; }
@@ -379,6 +383,14 @@ input[type="text"].form-control {
 
 #total-count-number, #total-hour-count {
   font-weight: 700; }
+
+@media (max-width: 800px) {
+  .hours, .hourlyRate {
+    display: block; } }
+
+@media (max-width: 800px) {
+  .hourlyRate {
+    margin-top: 7px; } }
 
 .navbar-default {
   background: #fff;
