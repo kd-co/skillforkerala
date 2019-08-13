@@ -87,9 +87,9 @@ a, a:hover{
 	}	
 }
 .brand-header-md{
-	font-size: 4rem;
+	font-size: 3.8rem !important;
 	@media(max-width: 800px) {
-		font-size: 2.7rem;	
+		font-size: 2.7rem !important;	
 		text-align: center;
 	}
 }
@@ -229,7 +229,7 @@ a, a:hover{
 }
 .landing-listing-container{
 	background: #f0f5f4;
-	padding: 50px 0px;
+	padding: 30px 0px;
 	margin-top: 80px;
 	@media(max-width: 800px) {
 		padding: 20px 0px;
@@ -474,6 +474,43 @@ input[type="text"].form-control{
 	.navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
 	    color: #555;
 	    background-color: transparent;
+	}
+}
+.search-input-container{
+	position: relative;
+}
+.profile-search-input{
+	padding: 15px 15px 15px 55px;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+	background: #fff;
+	font-size: 2.0rem;
+	display: block;
+	width: 100%;
+	margin-bottom: 25px;
+	outline: none;
+	font-weight: 400;
+	color: #333;
+	&:focus{
+		outline: none;
+		border: 1px solid $GREEN;
+	}
+	@media(max-width: 800px){
+		font-size: 1.6rem;
+		padding: 15px 15px 15px 45px;
+	}
+}
+.search-input-icon{
+    position: absolute;
+    left: 15px;
+    top: 17px;
+    height: 24px;
+    background: url('../img/search.svg');
+    width: 24px;
+    opacity: 0.4;
+    @media(max-width: 800px){
+    	height: 18px;
+    	width: 18px;
 	}
 }
 

@@ -50,7 +50,7 @@
 				</div>
 				<div class="row mt30">
 					<div class="col-md-12">
-						<p class="section-desc-md c-grey-semi-dark" id="total-count-line" style="display: none;">
+						<p class="section-desc-md c-grey-semi-dark animated fadeIn" id="total-count-line" style="display: none;">
 							<span class="mr7">😇</span>
 							<span id="total-count-number"></span>
 							people have pledged
@@ -63,13 +63,13 @@
 		</div>
 	</div>
 
-	<section class="landing-listing-container">
+	<section class="landing-listing-container animated fadeIn" style="display: none;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row">
 						<div class="col-md-12 mob-center">
-							<h1 class="brand-header brand-header-md serif-bold">The List</h1>
+							<!-- <h1 class="brand-header brand-header-md serif-bold">The List</h1> -->
 						</div>
 					</div>
 
@@ -84,18 +84,21 @@
 						</div>
 					</div> -->
 
-					<div class="profile-card-section mt40" id="designers">
-					   <ul class="list row" style="display: block; padding: 0px;"></ul>
+					<div class="profile-card-section animated fadeIn" id="designers">
+						<div class="search-input-container">
+							<input type="text" class="search profile-search-input" placeholder="Search for people, skills or services..." name="">
+							<span class="search-input-icon"></span>
+						</div>
+						<ul class="list row" style="display: block; padding: 0px;"></ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<section class="footer">
-		<div class="container">
-			<p class="section-desc-sm c-grey-semi-dark">Built with ❤️ by KDCo</p>
-		</div>
+		<section class="footer">
+			<div class="container">
+				<p class="section-desc-sm c-grey-semi-dark">Built with ❤️ by KDCo</p>
+			</div>
+		</section>
 	</section>
 
 
@@ -204,8 +207,8 @@
 			console.log(designersList.items.length, totalHours);
 			$("#total-count-number").text(designersList.items.length);
 			$("#total-hour-count").text(totalHours);
-			$("#total-count-line").fadeIn("fast");
-			$("#profile-card-loader").hide();
+			$("#total-count-line").show();
+			$(".landing-listing-container").show();
 		});
 
   	</script>
