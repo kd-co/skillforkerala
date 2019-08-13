@@ -169,18 +169,20 @@
 				var hours = value['howManyHoursCanYouPledge?'];
 				var portfolio = value['linkToYourPortfolioOrPersonalWebsite'];
 				var services = value['whatServicesDoYouOffer?'];
-				var obj = {
-					name: name,
-					email: email,
-					hourlyRate: hourlyRate + '/hour',
-					hours: 'Pledged ' + hours + ' hours',
-					portfolio: portfolio,
-					services: services,
-					initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join("").toUpperCase(),
-					bgColor: 'background: ' + colours[Math.floor(Math.random()*colours.length)],
+				if(value['approved']=='Yes') {
+					var obj = {
+						name: name,
+						email: email,
+						hourlyRate: hourlyRate + '/hour',
+						hours: 'Pledged ' + hours + ' hours',
+						portfolio: portfolio,
+						services: services,
+						initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join("").toUpperCase(),
+						bgColor: 'background: ' + colours[Math.floor(Math.random()*colours.length)],
+					}
+					values.push(obj);
+					console.log(obj);
 				}
-				values.push(obj);
-				console.log(obj);
 			});
 			designersList = new List('designers', options, values);	
 			console.log(designersList);
