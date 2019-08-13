@@ -176,7 +176,7 @@
 				var hours = value['howManyHoursCanYouPledge?'];
 				var portfolio = value['linkToYourPortfolioOrPersonalWebsite'];
 				var services = value['whatServicesDoYouOffer?'];
-				if(value['approved']=='Yes' && value['timestamp']) {
+				if((value['approved']!='No') && value['timestamp']) {
 					var obj = {
 						name: name,
 						email: 'mailto:' + email + '?subject=Skill for Kerala',
