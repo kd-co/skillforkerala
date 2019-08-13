@@ -125,7 +125,11 @@
 		  	  attr: 'style',
 		  	},
 		  	{
-		  	  name: 'portfolio',
+		  	  name: 'portfolioWeb',
+		  	  attr: 'href',
+		  	},
+		  	{
+		  	  name: 'portfolioMob',
 		  	  attr: 'href',
 		  	}
 	  		],
@@ -148,13 +152,13 @@
 							<p class='profile-card-loc c-grey-semi-dark initials'></p>
 						</div>
 						<div class='col-md-2 web-only'>
-							<a class='btn btn-secondary portfolio btn-sm mt10 mb5'>Portfolio</a>
+							<a class='btn btn-secondary portfolioWeb btn-sm mt10 mb5' target='_blank'>Portfolio</a>
 						</div>
 						<div class='col-md-3 col-xs-6'>
 							<a class='btn btn-primary email btn-sm mt10 mb5'>Contact</a>
 						</div>
 						<div class='col-md-2 col-xs-6 mob-only'>
-							<a class='btn btn-secondary portfolio btn-sm mt10 mb5' target='_blank'>Portfolio</a>
+							<a class='btn btn-secondary portfolioMob btn-sm mt10 mb5' target='_blank'>Portfolio</a>
 						</div>
 					</div>
 				</div>
@@ -184,7 +188,8 @@
 						email: 'mailto:' + email + '?subject=Skill for Kerala',
 						hourlyRate: hourlyRate + '/hour',
 						hours: 'Pledged ' + hours + ' hours',
-						portfolio: portfolio,
+						portfolioWeb: portfolio,
+						portfolioMob: portfolio,
 						services: services,
 						initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join("").toUpperCase(),
 						bgColor: 'background: ' + colours[Math.floor(Math.random()*colours.length)],
