@@ -51,10 +51,13 @@
 				</div>
 				<div class="row mt30">
 					<div class="col-md-12">
-					<p class="section-desc-md c-grey-semi-dark" id="total-count-line" style="display: none;">
-						<span class="mr7">😇</span>
-						<span id="total-count-number"></span>
-						people have already pledged theirs!</p>
+						<p class="section-desc-md c-grey-semi-dark" id="total-count-line" style="display: none;">
+							<span class="mr7">😇</span>
+							<span id="total-count-number"></span>
+							people have pledged
+							<span id="total-hour-count"></span>
+							hours
+						</p>
 					</div>
 				</div>
 			</div>
@@ -158,15 +161,12 @@
 
 
 		var values = [];
+		var totalHours = 0;
 
 		var colours = ['#FFD37A', '#E57E22', '#98A2A4', '#F6B7D1', '#63A4BB', '#D8E3E4', '#BD97A3', '#8CC7C2', '#E8D387', '#B7BAA4', '#97CE68'];
 
 		$("#profile-card-loader").show();
 		$.getJSON("https://api.sheety.co/9a0d2e41-b1b6-48b5-9a1c-f0a1678b6aa5", function(data) {
-
-			console.log(data, 90990);
-			$("#total-count-number").text(data.length);
-			$("#total-count-line").fadeIn("fast");
 
 			$.each(data, function( key, value ) {
 				console.log(value, 90990);
@@ -187,12 +187,16 @@
 						initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join("").toUpperCase(),
 						bgColor: 'background: ' + colours[Math.floor(Math.random()*colours.length)],
 					}
+					totalHours = totalHours + hours;
 					values.push(obj);
 					console.log(obj);
 				}
 			});
 			designersList = new List('designers', options, values);	
-			console.log(designersList);
+			console.log(designersList.items.length, totalHours);
+			$("#total-count-number").text(designersList.items.length);
+			$("#total-hour-count").text(totalHours);
+			$("#total-count-line").fadeIn("fast");
 			$("#profile-card-loader").hide();
 		});
 

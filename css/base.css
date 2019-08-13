@@ -377,6 +377,9 @@ input[type="text"].form-control {
   padding: 20px 15px;
   text-align: center; }
 
+#total-count-number, #total-hour-count {
+  font-weight: 700; }
+
 .navbar-default {
   background: #fff;
   border: none;
