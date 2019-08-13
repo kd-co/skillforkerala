@@ -169,7 +169,7 @@
 				var hours = value['howManyHoursCanYouPledge?'];
 				var portfolio = value['linkToYourPortfolioOrPersonalWebsite'];
 				var services = value['whatServicesDoYouOffer?'];
-				if(value['approved']=='Yes') {
+				if(value['approved']=='Yes' && value['timestamp']) {
 					var obj = {
 						name: name,
 						email: email,
