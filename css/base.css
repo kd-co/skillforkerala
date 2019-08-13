@@ -91,6 +91,13 @@ a, a:hover {
   .web-only {
     display: none; } }
 
+@media (min-width: 800px) {
+  .mob-only {
+    display: none; } }
+@media (max-width: 800px) {
+  .mob-only {
+    display: block; } }
+
 .serif-extra-bold {
   font-family: "Playfair Display", serif;
   font-weight: 900; }
@@ -176,6 +183,12 @@ a, a:hover {
     display: inline-block;
     width: auto;
     font-size: 1.4rem !important; } }
+
+@media (max-width: 800px) {
+  .btn-secondary.portfolio {
+    font-size: 1.4rem !important;
+    padding: 7px 0px !important;
+    text-align: left; } }
 
 @media (min-width: 800px) {
   .landing-hero {

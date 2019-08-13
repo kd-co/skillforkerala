@@ -103,6 +103,14 @@ a, a:hover{
 		display: none;
 	}	
 }
+.mob-only{
+	@media(min-width: 800px) {
+		display: none;
+	}
+	@media(max-width: 800px) {
+		display: block;
+	}	
+}
 .serif-extra-bold{
 	font-family: $FONT-SERIF;
 	font-weight: 900;
@@ -192,6 +200,13 @@ a, a:hover{
 	    display: inline-block;
 	    width: auto;
 	    font-size: 1.4rem !important;
+	}
+}
+.btn-secondary.portfolio{
+	@media(max-width: 800px) {
+	    font-size: 1.4rem !important;
+    	padding: 7px 0px !important;
+    	text-align: left;
 	}
 }
 .landing-hero{
