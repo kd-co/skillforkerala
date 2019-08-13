@@ -53,7 +53,7 @@ a, a:hover{
 	font-family: $FONT-SERIF;
 	color: $GREY-DARK;
 	font-weight: 700;
-    font-size: 4.5rem;
+    font-size: 4.5rem !important;
 	position: relative;
 	z-index: 10;
 	display: table;
@@ -70,7 +70,7 @@ a, a:hover{
 		z-index: -1;
 	}
 	@media(max-width: 800px) {
-		font-size: 3rem;
+		font-size: 3rem !important;
 		text-align: center;
 		display: inline-block;
 		line-height: 0.65;

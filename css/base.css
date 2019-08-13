@@ -47,7 +47,7 @@ a, a:hover {
   font-family: "Playfair Display", serif;
   color: #333;
   font-weight: 700;
-  font-size: 4.5rem;
+  font-size: 4.5rem !important;
   position: relative;
   z-index: 10;
   display: table; }
@@ -62,7 +62,7 @@ a, a:hover {
     z-index: -1; }
   @media (max-width: 800px) {
     .brand-header {
-      font-size: 3rem;
+      font-size: 3rem !important;
       text-align: center;
       display: inline-block;
       line-height: 0.65; }
