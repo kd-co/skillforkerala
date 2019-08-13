@@ -56,8 +56,8 @@ a, a:hover {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: -12px;
-    height: 30px;
+    bottom: -10px;
+    height: 26px;
     background: #b9f4e7;
     z-index: -1; }
   @media (max-width: 800px) {
