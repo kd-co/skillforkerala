@@ -310,6 +310,7 @@ a, a:hover{
 	}
 	.profile-card-desc{
 		font-size: 1.65rem;
+		overflow-wrap: break-word;
 		@media(max-width: 800px){
 			font-size: 1.6rem;
 		}
