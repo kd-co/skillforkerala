@@ -63,6 +63,7 @@
 		</div>
 	</div>
 
+	<!-- <section class="landing-listing-container animated fadeIn" style="display: none;"> -->
 	<section class="landing-listing-container animated fadeIn" style="display: none;">
 		<div class="container">
 			<div class="row">
@@ -85,10 +86,30 @@
 					</div> -->
 
 					<div class="profile-card-section animated fadeIn" id="designers">
+						<div class="filter-category-container">
+							<div class="filter-categories">
+								<a class="filter-item filter-reset selected" onclick="filterByCategory(this, )">All</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'UI')">UI</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Web Development')">Web Development</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Graphic Design')">Graphic Design</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Hand Drawn')">Hand Drawn</a>
+								<a class="filter-item" onclick="filterByCategory(this, '3D')">3D</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Branding')">Branding</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Content')">Content</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Training')">Training</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Workshop')">Workshop</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Illustration')">Illustration</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Consultation')">Consultation</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Photography')">Photography</a>
+								<a class="filter-item" onclick="filterByCategory(this, 'Editing')">Editing</a>
+							</div>
+						</div>
+
 						<div class="search-input-container">
 							<input type="text" class="search profile-search-input" placeholder="Search for people, skills or services..." name="">
 							<span class="search-input-icon"></span>
 						</div>
+
 						<ul class="list row" style="display: block; padding: 0px;"></ul>
 					</div>
 				</div>
@@ -134,7 +155,8 @@
 		  	{
 		  	  name: 'portfolioMob',
 		  	  attr: 'href',
-		  	}
+		  	},
+		  	'categories'
 	  		],
 
   		item: `<div class='col-md-12'>
@@ -175,16 +197,30 @@
 		var colours = ['#FFD37A', '#E57E22', '#98A2A4', '#F6B7D1', '#63A4BB', '#D8E3E4', '#BD97A3', '#8CC7C2', '#E8D387', '#B7BAA4', '#97CE68'];
 
 		$("#profile-card-loader").show();
+		console.log("Hey there!");
+		console.log("The code for this project lives at https://github.com/kd-co/skillforkerala");
+		console.log("Feel free to make your contribution.");
+		console.log("Light shall spread! 😇");
 		$.getJSON("https://api.sheety.co/9a0d2e41-b1b6-48b5-9a1c-f0a1678b6aa5", function(data) {
 
 			$.each(data, function( key, value ) {
-				console.log(value, 90990);
+				// console.log(value, 90990);
 				var name = value['yourFullName']?value['yourFullName']:'Unknown';
 				var email = value['emailAddress'];
 				var hourlyRate = value['hourlyRate'];
 				var hours = value['howManyHoursCanYouPledge?'];
 				var portfolio = value['linkToYourPortfolioOrPersonalWebsite'];
 				var services = value['whatServicesDoYouOffer?'];
+				var categories = [];
+				if(value['category1']){
+					categories.push(value['category1']);	
+				}
+				if(value['category2']){
+					categories.push(value['category2']);	
+				}
+				if(value['category3']){
+					categories.push(value['category3']);	
+				}
 				if((value['approved']=='Yes') && value['timestamp']) {
 					var obj = {
 						name: name,
@@ -196,20 +232,45 @@
 						services: services,
 						initials: name.split(" ").map((n,i,a)=> i === 0 || i+1 === a.length ? n[0] : null).join("").toUpperCase(),
 						bgColor: 'background: ' + colours[Math.floor(Math.random()*colours.length)],
+						categories: categories,
 					}
 					totalHours = totalHours + hours;
 					values.push(obj);
-					console.log(obj);
+					// console.log(obj);
 				}
 			});
 			values.reverse();
 			designersList = new List('designers', options, values);	
-			console.log(designersList.items.length, totalHours);
+			// console.log(designersList.items.length, totalHours);
 			$("#total-count-number").text(designersList.items.length);
 			$("#total-hour-count").text(totalHours);
 			$("#total-count-line").show();
 			$(".landing-listing-container").show();
 		});
+
+
+		function filterByCategory(elem, category){
+			clearFilters();
+			$(elem).addClass('selected');
+			if(category!=null){
+				designersList.filter(function(item) {
+					if (item.values().categories.includes(category)) {
+					   return true;
+					} else {
+					   return false;
+					}
+				});
+			} else {
+				clearFilters();
+				$('.filter-reset').addClass('selected');
+			}
+		}
+
+		function clearFilters(){
+			$('.filter-item').removeClass('selected');
+			designersList.filter();
+		}
+
 
   	</script>
 

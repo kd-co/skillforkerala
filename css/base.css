@@ -208,11 +208,11 @@ a, a:hover {
 
 .landing-listing-container {
   background: #f0f5f4;
-  padding: 30px 0px;
+  padding: 20px 0px;
   margin-top: 80px; }
   @media (max-width: 800px) {
     .landing-listing-container {
-      padding: 20px 0px;
+      padding: 15px 0px;
       margin-top: 40px; } }
 
 .landing-search {
@@ -441,7 +441,7 @@ input[type="text"].form-control {
   border-radius: 6px;
   border: 1px solid #ddd;
   background: #fff;
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   display: block;
   width: 100%;
   margin-bottom: 25px;
@@ -468,6 +468,37 @@ input[type="text"].form-control {
     .search-input-icon {
       height: 18px;
       width: 18px; } }
+
+.filter-category-container {
+  height: 48px;
+  margin: 0px 0px 15px 0px;
+  overflow: hidden; }
+  @media (max-width: 800px) {
+    .filter-category-container {
+      height: 40px; } }
+  .filter-category-container .filter-categories {
+    padding: 5px 0px 30px 0px;
+    white-space: nowrap;
+    overflow-x: scroll; }
+    @media (max-width: 800px) {
+      .filter-category-container .filter-categories {
+        padding-bottom: 20px; } }
+    .filter-category-container .filter-categories .filter-item {
+      color: #666;
+      font-size: 1.6rem;
+      display: inline-block;
+      padding: 7px 10px;
+      margin: 0px 3px;
+      border-radius: 6px;
+      transition: all 0.075s ease-in; }
+      .filter-category-container .filter-categories .filter-item:hover {
+        background: #b9f4e7; }
+      @media (max-width: 800px) {
+        .filter-category-container .filter-categories .filter-item {
+          font-size: 1.4rem;
+          padding: 5px 10px; } }
+    .filter-category-container .filter-categories .filter-item.selected {
+      background: #b9f4e7; }
 
 .relative {
   position: relative !important; }
