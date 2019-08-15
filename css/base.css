@@ -503,7 +503,7 @@ input[type="text"].form-control {
     .filter-category-container .filter-categories .filter-item.selected {
       background: #b9f4e7; }
   .filter-category-container .filter-select {
-    padding: 10px 15px;
+    padding: 10px 10px;
     margin-bottom: 15px;
     box-shadow: none;
     color: #666;
