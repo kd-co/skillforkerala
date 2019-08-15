@@ -93,6 +93,15 @@ a, a:hover{
 		text-align: center;
 	}
 }
+.brand-header-sm{
+	font-size: 2.4rem;
+	font-weight: 700;
+	margin: 50px 0px 15px 0px;
+	line-height: 1.2;
+	@media(max-width: 800px) {
+		font-size: 2.2rem;
+	}
+}
 .mob-center{
 	@media(max-width: 800px) {
 		text-align: center;
@@ -109,6 +118,14 @@ a, a:hover{
 	}
 	@media(max-width: 800px) {
 		display: block;
+	}	
+}
+.mob-only-inline{
+	@media(min-width: 800px) {
+		display: none;
+	}
+	@media(max-width: 800px) {
+		display: inline-block;
 	}	
 }
 .serif-extra-bold{
@@ -141,9 +158,18 @@ a, a:hover{
 }
 .section-desc-md{
 	font-size: 1.8rem;
+	color: $GREY-SEMI-DARK;
+	line-height: 1.6;
 	@media(max-width: 800px) {
-		font-size: 1.4rem;
-		text-align: center;
+		font-size: 1.6rem;
+	}
+}
+.section-desc-sm{
+	font-size: 1.4rem;
+	line-height: 1.6;
+	color: $GREY-SEMI-DARK;
+	@media(max-width: 800px) {
+		font-size: 1.2rem;
 	}
 }
 .section-header-sm{
@@ -544,7 +570,7 @@ input[type="text"].form-control{
 		    margin: 0px 3px 10px 3px;
 		    border-radius: 4px;
 		    transition: all 0.075s ease-in;
-		    border: 1px solid #ddd;
+		    border: 1px solid #ccc;
 			&:hover{
 				background: $BRAND-PRIMARY-LIGHT;
 			}
@@ -586,6 +612,19 @@ input[type="text"].form-control{
 
 		background: #fafafa;
 
+	}
+}
+
+.tab-container{
+	.nav-tabs li{
+		font-size: 1.6rem;
+		a{
+			color: $GREY-SEMI-DARK;
+			font-weight: 500;
+		}
+	}
+	.nav-tabs li.active{
+		a{color: #333;}
 	}
 
 }
