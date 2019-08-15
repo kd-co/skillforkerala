@@ -87,7 +87,7 @@
 
 					<div class="profile-card-section animated fadeIn" id="designers">
 						<div class="filter-category-container">
-							<div class="filter-categories">
+							<div class="filter-categories web-only">
 								<a class="filter-item filter-reset selected" onclick="filterByCategory(this, )">All</a>
 								<a class="filter-item" onclick="filterByCategory(this, 'UI')">UI</a>
 								<a class="filter-item" onclick="filterByCategory(this, 'Web Development')">Web Development</a>
@@ -103,6 +103,22 @@
 								<a class="filter-item" onclick="filterByCategory(this, 'Photography')">Photography</a>
 								<a class="filter-item" onclick="filterByCategory(this, 'Editing')">Editing</a>
 							</div>
+							<select class="filter-select mob-only">
+								<option selected="true" value="All">All categories</option>
+								<option value="UI">UI</option>
+								<option value="Web Development">Web Development</option>
+								<option value="Graphic Design">Graphic Design</option>
+								<option value="Hand Drawn">Hand Drawn</option>
+								<option value="3D">3D</option>
+								<option value="Branding">Branding</option>
+								<option value="Content">Content</option>
+								<option value="Training">Training</option>
+								<option value="Workshop">Workshop</option>
+								<option value="Illustration">Illustration</option>
+								<option value="Consultation">Consultation</option>
+								<option value="Photography">Photography</option>
+								<option value="Editing">Editing</option>
+							</select>
 						</div>
 
 						<div class="search-input-container">
@@ -270,6 +286,14 @@
 			$('.filter-item').removeClass('selected');
 			designersList.filter();
 		}
+
+		$(".filter-select").change(function(){
+			if($(".filter-select").val() != 'All'){
+				filterByCategory(null, $(".filter-select").val());
+			} else {
+				filterByCategory(null, null);
+			}
+		});
 
 
   	</script>
