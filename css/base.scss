@@ -498,6 +498,7 @@ input[type="text"].form-control{
 	@media(max-width: 800px){
 		font-size: 1.6rem;
 		padding: 15px 15px 15px 45px;
+		margin-bottom: 15px;
 	}
 }
 .search-input-icon{
@@ -514,34 +515,38 @@ input[type="text"].form-control{
 	}
 }
 .filter-category-container{
-	height: 48px;
-	margin: 0px 0px 15px 0px;
-	overflow: hidden;
+	// height: 48px;
+	margin: 0px 0px 10px 0px;
+	// overflow: hidden;
 	@media(max-width: 800px){
-		height: 40px;
+		// height: 40px;
 	}
 
 	.filter-categories{
-		padding: 5px 0px 30px 0px;
-		white-space: nowrap;
-		overflow-x: scroll;
+		padding: 0px;
+		// white-space: nowrap;
+		// overflow-x: scroll;
 		@media(max-width: 800px){
-			padding-bottom: 20px;
+			padding-bottom: 0px;
 		}
 		.filter-item{
-			color: #666;
-			font-size: 1.6rem;
-			display: inline-block;
-			padding: 7px 10px;
-			margin: 0px 3px;
-			border-radius: 6px;
-			transition: all 0.075s ease-in;
+		    height: 36px;
+		    color: #666;
+		    font-size: 1.6rem;
+		    display: inline-block;
+		    padding: 7px 10px;
+		    margin: 0px 3px 10px 3px;
+		    border-radius: 6px;
+		    transition: all 0.075s ease-in;
+		    border: 1px solid #ddd;
 			&:hover{
 				background: $BRAND-PRIMARY-LIGHT;
 			}
 			@media(max-width: 800px){
 				font-size: 1.4rem;
 				padding: 5px 10px;
+				height: 32px;
+				border-radius: 4px;
 			}
 		}
 		.filter-item.selected{
