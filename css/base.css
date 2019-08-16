@@ -254,6 +254,13 @@ a, a:hover {
 .align-right {
   text-align: right; }
 
+.align-left {
+  text-align: left; }
+
+@media (max-width: 800px) {
+  .mob-align-center {
+    text-align: center !important; } }
+
 .center {
   text-align: center; }
 
@@ -1142,5 +1149,12 @@ input[type="text"].form-control {
 
 .z-index--1 {
   z-index: -1 !important; }
+
+@media (max-width: 800px) {
+  .mob-mt15 {
+    margin-top: 15px !important; }
+
+  .mob-mt10 {
+    margin-top: 10px !important; } }
 
 /*# sourceMappingURL=base.css.map */
